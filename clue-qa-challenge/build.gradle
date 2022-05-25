@@ -1,0 +1,29 @@
+buildscript {
+    ext {
+        agp_version = '4.3.2'
+    }
+
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+    }
+
+
+}// Define global test task that tests everything
+
+task globalTest(group: 'verification') {
+
+    // Test app (mocked variant)
+    dependsOn ":app:createDarkGreenMockedDebugCoverageReport"
+
+    // Test app (local server variant)
+    dependsOn ":app:createLightGreenRealLocalServerDebugCoverageReport"
+
+    // Test server
+    dependsOn ":server:test"
+}
