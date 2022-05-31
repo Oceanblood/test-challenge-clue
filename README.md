@@ -18,12 +18,12 @@ Why Robot? the answer is very simple - human readable code, wich allows every pe
 ## Possible improvements
 
 1. We can look at [Kakao](https://github.com/KakaoCup/Kakao) 
-Really good framework with a bit differrent code style. It might be very useful and also might help to work with diferent android elements such as SeekBars for example . And [Kakao](https://github.com/KakaoCup/Kakao) is much more better to use rather then pure [Espresso](https://developer.android.com/training/testing/espresso)
+Really good framework with a bit different code style. It might be very useful and also might help to work with diferent android elements such as SeekBars for example . And [Kakao](https://github.com/KakaoCup/Kakao) is much more better to use rather then pure [Espresso](https://developer.android.com/training/testing/espresso)
 
 2. Screenshot maker
 We will definitely need it in our tests, for having more human readable output in tests. ScreenShots also will allow us to debug and define the problem in our tests
 
-[Spoon](https://square.github.io/spoon/) - will aslo allows you to implement screenshots and launch tests in parallel 
+[Spoon](https://square.github.io/spoon/) - will also allows you to implement screenshots and launch tests in parallel 
 or
 [Allure reports integration](https://github.com/allure-framework/allure-kotlin)
 
