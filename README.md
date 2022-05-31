@@ -4,7 +4,6 @@
 
 ### [Test Orchestrator](https://developer.android.com/training/testing/instrumented-tests/androidx-test-libraries/runner#java) - for haveing fresh installed app on every launch
 
-### [Barista](https://github.com/AdevintaSpain/Barista) for some view assertions 
 
 ### [Hamkrest](https://github.com/npryce/hamkrest) for containing assertions
 
@@ -30,3 +29,4 @@ or
 
 3. I would also wanted to separate Data class and make it more easier to have. If we have LoginScope + Login Data class which will store data/strings etc for tests
 4. Integration with test cases, to have more coverage understanding 
+5. ### [Barista](https://github.com/AdevintaSpain/Barista) for some view assertions 
