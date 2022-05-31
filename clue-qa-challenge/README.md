@@ -1,41 +1,31 @@
-# Clue QA Challenge by Ivan Skvortsov
+# QA Challenge by Ilia Belchenko
 
-Initial task can be found [here](TASK.md) .
+## Used Tools
 
-## Tools
+### [Test Orchestrator](https://developer.android.com/training/testing/instrumented-tests/androidx-test-libraries/runner#java) - for haveing fresh installed app on every launch
 
-### [Kakao](https://github.com/KakaoCup/Kakao)
+### [Hamkrest](https://github.com/npryce/hamkrest) for containing assertions
 
-It's a real nice framework that reduces clutter in tests and makes your Screen Object classes look neat and clean. 
-It also helps that Kakao has built-in wait (5 sec timeout, if I'm not mistaken) and using it without any additions is perfectly fine for a project with local/mocked server. 
+### [Espresso](https://developer.android.com/training/testing/espresso) to view Matchers, etc. However, Espresso is poorer due to not very good waitings/assertions, expectations, etc., or even such decisions may be absent
 
-Other than that, I didn't use any external tools.
+## Pattern - Robot
 
-### Pattern - Screen Object
+I really love this pattern. It allows you to have all in the right place but separated in the same time.
+Why Robot? the answer is very simple - human readable code, wich allows every person not only even from the manual QA team, who even don't know how to wright tests, strart to wright them and understand what is tested and how
 
-I usually pick this as it makes sense to have all screen Views and actions with them at one place. Kakao helps with this a lot and makes the code even more straightforward and clean.
-
-It was also possible to use Robot pattern, but it's not always the best choice and can make the test framework unnecessarily complex (personal experience)
 
 ## Possible improvements
 
-It's possible to simulate no connection and bad connection for this app and check corresponding errors described in [strings.xml - lines 19-21](app/src/main/res/values/strings.xml)
+1. We can look at [Kakao](https://github.com/KakaoCup/Kakao)
+   Really good framework with a bit different code style. It might be very useful and also might help to work with diferent android elements such as SeekBars for example . And [Kakao](https://github.com/KakaoCup/Kakao) is much more better to use rather then pure [Espresso](https://developer.android.com/training/testing/espresso)
 
-If there is a plan to use "real" remote server in the future, it would make sense to implement IdlingResourse to wait for server response.
+2. Screenshot maker
+   We will definitely need it in our tests, for having more human readable output in tests. ScreenShots also will allow us to debug and define the problem in our tests
 
-It might be a good idea to implement [Kaspresso](https://github.com/KasperskyLab/Kaspresso) for better UI test logs and test structure and faster execution.
+[Spoon](https://square.github.io/spoon/) - will also allows you to implement screenshots and launch tests in parallel
+or
+[Allure reports integration](https://github.com/allure-framework/allure-kotlin)
 
-If the project calls for BDD - I would use [Cucumber](https://cucumber.io) along with Kakao.
-
-If there will be lots of tests in the future, it would be nice to run them in parallel on some cloud service like Firebase Testlab, and I would use [Flank/Fladle](https://github.com/runningcode/fladle) to be able to run those tests in parallel.
-
-In other words, there are many possibilities, but too little time... :) 
-
-### Some feedback regarding the test app
-
-I understand that this test assignment is based on the open-source app, but it would be so much better if Clue team could provide self-developed dummy app with similar functions.
-The thing is that current open-source app has lots of unnecessary stuff, and I actually had trouble compiling it in it's initial form. 
-
-It would be also cool if you could include versions for JDK, Gradle, Docker, and any other tools needed to compile the app in order to save candidates some time and makes their test assignment more fun.
-
-Never forget that this test assignment is not only used by Clue team to verify candidate skills, it's also used by candidates and gives them a taste of their possible future tasks. 
+3. I would also wanted to separate Data class and make it more easier to have. If we have LoginScope + Login Data class which will store data/strings etc for tests
+4. Integration with test cases, to have more coverage understanding 
+5. ### [Barista](https://github.com/AdevintaSpain/Barista) for some view assertions
