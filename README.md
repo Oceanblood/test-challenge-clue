@@ -1,4 +1,4 @@
-# QA Challenge by Ilia Belchenko
+# Task by Ilia Belchenko
 
 ## Used Tools
 
